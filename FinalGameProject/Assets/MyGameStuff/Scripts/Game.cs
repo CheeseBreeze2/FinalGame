@@ -6,12 +6,14 @@ public class WarriorMovement : MonoBehaviour
     public GameObject friendlyWarriorPrefab;  // Assignable in the Inspector
     public GameObject enemyWarriorPrefab;     // Assignable in the Inspector
     public List<GameObject> tiles;            // Assign all tiles in the scene to this list in the Inspector
+    public Material highlightMaterial;        // Assignable in the Inspector
+    private Material originalMaterial;        // To store the original material of the selected warrior
     private GameObject selectedWarrior;       // To store the currently selected warrior
     private int selectedWarriorIndex = -1;    // Index of the currently selected warrior
 
     void Start()
     {
-        if (friendlyWarriorPrefab == null || enemyWarriorPrefab == null || tiles == null)
+        if (friendlyWarriorPrefab == null || enemyWarriorPrefab == null || tiles == null || highlightMaterial == null)
         {
             Debug.LogError("One or more references are not assigned in the Inspector.");
             return;
@@ -97,7 +99,7 @@ public class WarriorMovement : MonoBehaviour
                 // Check if a friendly warrior was clicked
                 if (hit.collider.CompareTag("FriendlyWarrior"))
                 {
-                    selectedWarrior = hit.collider.gameObject; // Store the clicked warrior
+                    SelectWarrior(hit.collider.gameObject); // Store the clicked warrior
                     Debug.Log("Friendly warrior selected: " + selectedWarrior.name);
                 }
                 else
@@ -122,7 +124,7 @@ public class WarriorMovement : MonoBehaviour
             }
             else
             {
-                selectedWarrior = null;
+                DeselectWarrior();
                 Debug.Log("Warrior deselected");
             }
         }
@@ -158,8 +160,37 @@ public class WarriorMovement : MonoBehaviour
         if (warriors.Length == 0) return;
 
         selectedWarriorIndex = (selectedWarriorIndex + 1) % warriors.Length;
-        selectedWarrior = warriors[selectedWarriorIndex];
+        SelectWarrior(warriors[selectedWarriorIndex]);
         Debug.Log("Friendly warrior selected: " + selectedWarrior.name);
+    }
+
+    void SelectWarrior(GameObject warrior)
+    {
+        if (selectedWarrior != null)
+        {
+            DeselectWarrior();
+        }
+
+        selectedWarrior = warrior;
+        Renderer renderer = selectedWarrior.GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            originalMaterial = renderer.material;
+            renderer.material = highlightMaterial;
+        }
+    }
+
+    void DeselectWarrior()
+    {
+        if (selectedWarrior != null)
+        {
+            Renderer renderer = selectedWarrior.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.material = originalMaterial;
+            }
+            selectedWarrior = null;
+        }
     }
 
     void MoveWarrior(Vector3 direction)
