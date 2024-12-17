@@ -127,28 +127,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3304001609064235377, guid: 7acf1b5994e469642bdc544a7ea512c7, type: 3}
   m_PrefabInstance: {fileID: 1344591528}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &90975690 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 33906310796725493, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
-  m_PrefabInstance: {fileID: 7191910030841803596}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &90975691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90975690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa67e93cec505654ea615687cce669c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  warriorPrefab: {fileID: 5642297825132127043, guid: 1040c3f1190acc341b1bd4196a4b032d, type: 3}
-  tiles:
-  - {fileID: 1843522719}
-  - {fileID: 1060858388}
-  - {fileID: 88967350}
 --- !u!1001 &262947412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,7 +194,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3304001609064235377, guid: 7acf1b5994e469642bdc544a7ea512c7, type: 3}
       propertyPath: m_Name
-      value: Grass (2)
+      value: GrassPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 5852518422465697893, guid: 7acf1b5994e469642bdc544a7ea512c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -263,6 +241,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7acf1b5994e469642bdc544a7ea512c7, type: 3}
+--- !u!1 &652941354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 33906310796725493, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
+  m_PrefabInstance: {fileID: 7191910030841803596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &652941357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652941354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964f2414cb6eea540b34d06163bd80e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +363,6 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -450,23 +444,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa67e93cec505654ea615687cce669c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  warriorPrefab: {fileID: 5642297825132127043, guid: 1040c3f1190acc341b1bd4196a4b032d, type: 3}
-  tiles:
-  - {fileID: 3304001609064235377, guid: 7acf1b5994e469642bdc544a7ea512c7, type: 3}
-  - {fileID: 3304001609064235377, guid: 7acf1b5994e469642bdc544a7ea512c7, type: 3}
-  - {fileID: 3304001609064235377, guid: 7acf1b5994e469642bdc544a7ea512c7, type: 3}
 --- !u!1 &1060858388 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3304001609064235377, guid: 7acf1b5994e469642bdc544a7ea512c7, type: 3}
@@ -482,7 +459,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3304001609064235377, guid: 7acf1b5994e469642bdc544a7ea512c7, type: 3}
       propertyPath: m_Name
-      value: Grass (1)
+      value: GrassEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 5852518422465697893, guid: 7acf1b5994e469642bdc544a7ea512c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -548,15 +525,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4581607731300456920, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4243414
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4581607731300456920, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.243276
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4581607731300456920, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.9764321
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4581607731300456920, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
       propertyPath: m_LocalRotation.w
@@ -586,13 +563,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4634306993579565391, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
+      propertyPath: enemyWarriorPrefab
+      value: 
+      objectReference: {fileID: 5642297825132127043, guid: aef31b628fe61424496c2c9c26931db7, type: 3}
+    - target: {fileID: 4634306993579565391, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
+      propertyPath: tiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1843522719}
+    - target: {fileID: 4634306993579565391, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
+      propertyPath: tiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 1060858388}
+    - target: {fileID: 4634306993579565391, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
+      propertyPath: tiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 88967350}
+    - target: {fileID: 4634306993579565391, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
+      propertyPath: friendlyWarriorPrefab
+      value: 
+      objectReference: {fileID: 5642297825132127043, guid: 1040c3f1190acc341b1bd4196a4b032d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 33906310796725493, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 90975691}
+      addedObject: {fileID: 652941357}
   m_SourcePrefab: {fileID: 100100000, guid: ee0f5e7de9008db48ada516858df2374, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
